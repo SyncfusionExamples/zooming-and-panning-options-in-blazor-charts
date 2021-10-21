@@ -1,0 +1,79 @@
+﻿@page "/"
+
+<SfChart Title="Sales History of the Product">
+    <ChartSeriesCollection>
+        <ChartPrimaryXAxis ValueType="Syncfusion.Blazor.Charts.ValueType.DateTime" Title="Years"
+                            Skeleton="yMMM" EdgeLabelPlacement="EdgeLabelPlacement.Shift" 
+                           EnableAutoIntervalOnZooming="true">
+        </ChartPrimaryXAxis>
+        <ChartPrimaryYAxis Title="Profit ($)"></ChartPrimaryYAxis>
+        <ChartSeries DataSource="@ChartData" XName="Period" YName="Profit" 
+                     Type="ChartSeriesType.Area" Width="2" Opacity="0.25">
+        </ChartSeries>
+    </ChartSeriesCollection>
+    <ChartZoomSettings EnableSelectionZooming="true" ToolbarItems="@ToolbarItemList"
+                       EnablePan="true" Mode="ZoomMode.XY" EnableScrollbar="true">
+
+    </ChartZoomSettings>
+</SfChart>
+
+@code {
+
+    public List<ToolbarItems> ToolbarItemList = new List<ToolbarItems> { 
+        ToolbarItems.ZoomIn, ToolbarItems.ZoomOut, ToolbarItems.Reset};
+
+    public class ChartDataModel
+    {
+        public DateTime Period { get; set; }
+        public double Profit { get; set; }
+    }
+
+    public List<ChartDataModel> ChartData = new List<ChartDataModel>
+    {
+        new ChartDataModel { Period = new DateTime(2000, 02, 11), Profit = 14 },
+        new ChartDataModel { Period = new DateTime(2000, 09, 04), Profit = 20 },
+        new ChartDataModel { Period = new DateTime(2001, 02, 11), Profit = 25 },
+        new ChartDataModel { Period = new DateTime(2001, 09, 16), Profit = 21 },
+        new ChartDataModel { Period = new DateTime(2002, 02, 07), Profit = 13 },
+        new ChartDataModel { Period = new DateTime(2002, 09, 07), Profit = 18 },
+        new ChartDataModel { Period = new DateTime(2003, 02, 11), Profit = 24 },
+        new ChartDataModel { Period = new DateTime(2003, 09, 14), Profit = 23 },
+        new ChartDataModel { Period = new DateTime(2004, 02, 06), Profit = 19 },
+        new ChartDataModel { Period = new DateTime(2004, 09, 06), Profit = 31 },
+        new ChartDataModel { Period = new DateTime(2005, 02, 11), Profit = 39 },
+        new ChartDataModel { Period = new DateTime(2005, 09, 11), Profit = 50 },
+        new ChartDataModel { Period = new DateTime(2006, 02, 11), Profit = 24 },
+        new ChartDataModel { Period = new DateTime(2006, 09, 04), Profit = 16 },
+        new ChartDataModel { Period = new DateTime(2007, 02, 12), Profit = 22 },
+        new ChartDataModel { Period = new DateTime(2007, 09, 17), Profit = 18 },
+        new ChartDataModel { Period = new DateTime(2008, 02, 04), Profit = 10 },
+        new ChartDataModel { Period = new DateTime(2008, 09, 15), Profit = 15 },
+        new ChartDataModel { Period = new DateTime(2009, 02, 16), Profit = 19 },
+        new ChartDataModel { Period = new DateTime(2009, 09, 14), Profit = 21 },
+        new ChartDataModel { Period = new DateTime(2010, 02, 08), Profit = 33 },
+        new ChartDataModel { Period = new DateTime(2010, 09, 06), Profit = 28 },
+        new ChartDataModel { Period = new DateTime(2011, 02, 07), Profit = 40 },
+        new ChartDataModel { Period = new DateTime(2011, 09, 19), Profit = 35 },
+        new ChartDataModel { Period = new DateTime(2012, 02, 13), Profit = 20 },
+        new ChartDataModel { Period = new DateTime(2012, 09, 10), Profit = 30 },
+        new ChartDataModel { Period = new DateTime(2013, 02, 11), Profit = 36 },
+        new ChartDataModel { Period = new DateTime(2013, 09, 16), Profit = 45 },
+        new ChartDataModel { Period = new DateTime(2014, 02, 10), Profit = 27 },
+        new ChartDataModel { Period = new DateTime(2014, 09, 05), Profit = 12 },
+        new ChartDataModel { Period = new DateTime(2015, 02, 09), Profit = 38 },
+        new ChartDataModel { Period = new DateTime(2015, 09, 07), Profit = 14 },
+        new ChartDataModel { Period = new DateTime(2016, 02, 15), Profit = 23 },
+        new ChartDataModel { Period = new DateTime(2016, 09, 12), Profit = 19 },
+        new ChartDataModel { Period = new DateTime(2017, 02, 13), Profit = 11 },
+        new ChartDataModel { Period = new DateTime(2017, 09, 11), Profit = 16 },
+        new ChartDataModel { Period = new DateTime(2018, 02, 12), Profit = 26 },
+        new ChartDataModel { Period = new DateTime(2018, 09, 10), Profit = 29 },
+        new ChartDataModel { Period = new DateTime(2019, 02, 11), Profit = 43 },
+        new ChartDataModel { Period = new DateTime(2019, 09, 16), Profit = 30 },
+        new ChartDataModel { Period = new DateTime(2020, 02, 10), Profit = 32 },
+        new ChartDataModel { Period = new DateTime(2020, 09, 14), Profit = 48 },
+        new ChartDataModel { Period = new DateTime(2021, 02, 15), Profit = 31 },
+        new ChartDataModel { Period = new DateTime(2021, 09, 13), Profit = 50 }
+    };
+
+}
