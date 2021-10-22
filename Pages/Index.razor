@@ -1,12 +1,12 @@
 ﻿@page "/"
 
 <SfChart Title="Sales History of the Product">
-    <ChartSeriesCollection>
-        <ChartPrimaryXAxis ValueType="Syncfusion.Blazor.Charts.ValueType.DateTime" Title="Years"
+     <ChartPrimaryXAxis ValueType="Syncfusion.Blazor.Charts.ValueType.DateTime" Title="Years"
                             Skeleton="yMMM" EdgeLabelPlacement="EdgeLabelPlacement.Shift" 
                            EnableAutoIntervalOnZooming="true">
         </ChartPrimaryXAxis>
         <ChartPrimaryYAxis Title="Profit ($)"></ChartPrimaryYAxis>
+    <ChartSeriesCollection>
         <ChartSeries DataSource="@ChartData" XName="Period" YName="Profit" 
                      Type="ChartSeriesType.Area" Width="2" Opacity="0.25">
         </ChartSeries>
