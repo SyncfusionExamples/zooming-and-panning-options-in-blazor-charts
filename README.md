@@ -44,9 +44,6 @@ dotnet run
 ```
 
 4. Open the local URL displayed in the terminal after the application starts.
-## Project Structure
-
-- `Pages/Index.razor` — contains the Syncfusion Blazor `SfChart` implementation, chart series definitions, zooming configuration, panning behavior, toolbar settings, and user interaction settings that demonstrate zooming and panning functionality in the chart.
 
 ## Support and Feedback
 
